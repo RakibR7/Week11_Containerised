@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  user-services:
+    image: server1:latest
+    ports:
+      - "8081:8081"
+    networks:
+      - my_network
+
+  confirmation-services:
+    image: server2:latest
+    ports:
+      - "8082:8082"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
